@@ -1,0 +1,70 @@
+%
+% FURB/DSC
+% Disciplina de IA
+% Prof. Jomi Hubner
+%
+% Exemplo procura rota com busca em largura
+%
+
+% Conhecimento do problema
+%
+caminho(a,b,2).
+caminho(a,c,3).
+caminho(b,j,1).
+caminho(j,k,2).
+caminho(k,n,2).
+caminho(n,m,3).
+caminho(b,h,2).
+caminho(h,k,3).
+caminho(h,i,2).
+caminho(h,g,1).
+caminho(c,g,2).
+caminho(c,p,2).
+caminho(c,o,2).
+caminho(c,d,2).
+caminho(g,f,1).
+caminho(f,d,1).
+caminho(f,e,1).
+caminho(d,e,2).
+
+cam(X,Y,C) :- caminho(X,Y,C).
+cam(X,Y,C) :- caminho(Y,X,C).
+
+% busca em largura
+%   dado uma lista de caminhos candidados
+%   1. se a meta eh a cabeca da lista, o caminho eh a solucao
+%   2. pega o primeiro caminho, gera todas as geracoes de filhos
+%      e inclui os novos caminhos no final dos abertos
+
+teste :- 
+	rota(a,g,R), 	
+	write(R), nl.
+
+rota(Inicio, Fim, Solucao) :- 
+	buscal([ [Inicio] ], Fim, Solucao).
+
+% formato do predido
+%    buscal( lista de caminhos possiveis, Meta, Solucao).
+
+% caso 1.
+buscal( [ [Meta|Solucao] | OutrosCaminhos], Meta, [Meta|Solucao]).
+
+% caso 2.
+buscal([ Caminho|RAbertos], Meta, Solucao) :-
+	filhos( Caminho, Filhos), %write(Filhos),nl,
+	conc( RAbertos, Filhos, NovoAbertos),	 
+	% profundidade: conc( Filhos, RAbertos, NovoAbertos),	 
+	buscal( NovoAbertos, Meta, Solucao).
+
+% gera os filhos de um caminho
+filhos([Nodo | Caminho], NovosCaminhos) :-
+	findall([Filho, Nodo | Caminho], 
+		(cam(Nodo, Filho, Custo), not member(Filho, [Nodo|Caminho])),
+		NovosCaminhos).
+
+
+member(X,[X|_]) :- !.
+member(X,[C|R]) :- member(X,R).
+
+conc([],L,L).
+conc([X|L1],L2,[X|L3]) :- conc(L1,L2,L3).
