@@ -1,0 +1,298 @@
+@relation badges_string
+@attribute name {"Aaron Feigelson","Alexander M. Meystel","Alma Whitten","Ameur Foued","Andrew W. Moore","Andrew Y. Ng","Andrey Burago","Anselm Blumer","Antoine Cornuejols","Arlindo Oliveira","Armand Prieditis","Arun Sharma","Attilio Giordana","Aurora Perez","Avrim Blum","Bala Kalyanasundaram","Barak A. Pearlmutter","Bernhard Pfahringer","Bhaskar Dasgupta","Bill Byrne","Bir Bhanu","Bob Evans","Bradley L. Whitehall","Brian D. Davidson","Brian Tester","Bruce A. MacDonald","Carl H. Smith","Carla E. Brodley","Charles X. Ling","Chen K. Tham","Chidanand Apte","Chris Darken","Chris Drummond","Chun-Nan Hsu","Claire Cardie","Clare Bates Congdon","Claude Sammut","Claudio Facchinetti","Craig Knoblock","Craig Nevill-Manning","Cristina Baroglio","Cullen Schaffer","Dan Oblinger","Dan Roth","Dana Angluin","Dana Ron","Daniel Hennessy","Daniel Kortenkamp","Daniel L. Silver","Darko Zupanic","David B. Skalak","David Cohn","David Finton","David Gillman","David Haussler","David Helmbold","David Loewenstern","David Mathias","David Montgomery","David Pierce","David W. Aha","David W. Opitz","Dennis F. Kibler","Diana Gordon","Donna Slonim","Drago Indjic","Dunja Mladenic","Earl S. Harris Jr.","Ed Pednault","Eddy Mayoraz","Efim Kinber","Emanuel Knill","Eric Allender","Eric Baum","Eyal Kushilevitz","Fernando Pereira","Filippo Neri","Foster J. Provost","Frank Stephan","Gary M. Selzer","Gary Weiss","Geoffrey Gordon","George A. Drastal","George Berg","George H. John","Gerald F. DeJong","Glenn Silverstein","Grigoris Karakoulas","Hal Duncan","Haralabos Athanassiou","Harris Drucker","Haym Hirsh","Hiroshi Motoda","Hiroshi Tanaka","Holly Yanco","Huw Roberts","Irina Tchoumatchenko","J. Jeffrey Mahoney","J. R. Quinlan","James S. Royer","Janusz Wnek","Jason Catlett","Javed Aslam","Jean Gabriel Ganascia","Jean-Daniel Zucker","Jeff Jackson","Jeffery Clouse","Jiarong Hong","Jing Peng","Joe Suzuki","Joel Ratsaby","Johanne Morin","Johannes Furnkranz","John Case","John Fischer","John M. Zelle","John R. Rose","John Rachlin","Jonathan Gratch","Jonathan Hodgson","Jong-Hoon Oh","Jorg-Uwe Kietz","Jose L. Balcazar","Joseph O'Sullivan","Jude Shavlik","Judy A. Franklin","Justin Boyan","Justinian Rosca","Jyrki Kivinen","Kamal M. Ali","Kan Deng","Karsten Verbeurgt","Kate Goelz","Kazushi Ikeda","Ken Lang","Kenji Yamanishi","Kimmen Sjolander","Klaus P. Jantke","Krishnan Pillaipakkamnatt","L. Thorne McCarty","Lance Fortnow","Lance Riley","Lars Asker","Leonard Pitt","Leslie Grate","Leslie Pack Kaelbling","Lindley Darden","Lisa Hellerstein","Long-Ji Lin","Lorenza Saitta","Lorien Y. Pratt","Lyle H. Ungar","Maja Mataric","Malini Bhandaru","Mandayam T. Suraj","Manfred Warmuth","Marcos Salganicoff","Margo Guertin","Mario Marchand","Mark Changizi","Mark Schwabacher","Mark Staley","Mark W. Craven","Marko Grobelnik","Martin Kummer","Martinch Krikis","Mary Soon Lee","Masayuki Inaba","Matevz Kovacic","Matthias Heger","Melinda T. Gervasio","Merrick L. Furst","Michael A. meystel","Michael I. Jordan","Michael J. Donahue","Michael Kearns","Michael Littman","Michael Redmond","Michael W. Barley","Michael de la Maza","Michele Sebag","Minoru Asada","Mona Singh","Moshe Koppel","Moshe Leshno","Myriam Abramson","Nader Bshouty","Naoki Abe","Nathalie Japkowicz","Neela Khan","Neil Berkman","Nicolas Fiechter","Nicolo Cesa-Bianchi","Nikolay Nikolaev","Nina Mishra","Nitin Indurkhya","Oded Maron","Olivier De Vel","Pang-Chieh Chen","Pascal Koiran","Pat Langley","Patricia J. Riddle","Patrick M. Murphy","Paul Fischer","Paul Utgoff","Paul Vitanyi","Paul W. Goldberg","Peter Bartlett","Phil Long","Philip Chan","Prasad Tadepalli","Priscilla Rasmussen","R. Andrew McCallum","R. Bharat Rao","Randolph Jones","Reinhard Blasig","Ricard Gavalda","Rich Maclin","Richard A. Caruana","Richard S. Sutton","Robert C. Holte","Robert P. Daley","Robert S. Roos","Robert Schapire","Robert Sloan","Robert Williamson","Roberto Piola","Ron Kohavi","Ronald L. Rivest","Roni Khardon","Ronitt Rubinfeld","Russell Greiner","Sally Goldman","Sandra Panizza","Sanjay Jain","Satinder Pal Singh","Scott E. Decatur","Sean Slattery","Sebastian Seung","Seth Flanders","Shai Ben-David","Shaul Markovitch","Sholom Weiss","Sonya Snedecor","Sreerama K. Murthy","Sridhar Mahadevan","Stan Matwin","Stefan Kramer","Steffen Lange","Stephen Kwek","Stephen Muggleton","Steve A. Chien","Steven Minton","Steven Salzberg","Steven W. Norton","Stuart Russell","Susan L. Epstein","Takefumi Yamazaki","Tal Grossman","Tapio Elomaa","Tatsuo Unemi","Thomas E. Kammeyer","Thomas Ellman","Thomas G. Dietterich","Thomas G. Spalthoff","Thomas Wengerek","Thomas Zeugmann","Timothy P. Barber","Tom Bylander","Tom Fawcett","Tom Hancock","Tom M. Mitchell","Toshiyasu Matsushima","Usama Fayyad","Vijay Raghavan","Von-Wun Soo","Wai Lam","Wan P. Chiang","Wee Sun Lee","Welton Becket","William A. Greene","William Cohen","William Gasarch","William Sakas","Wolfgang Janko","Wolfgang Maass","Wray Buntine","Xuemei Wang","Yishay Mansour","Yoav Freund","Yolanda Gil","Yoram Singer","Yoshifumi Sakai","Zhixiang Chen"}
+@attribute class {+,-}
+@data
+"Naoki Abe",+ 
+"Myriam Abramson", - 
+"David W. Aha", + 
+"Kamal M. Ali", + 
+"Eric Allender", - 
+"Dana Angluin", + 
+"Chidanand Apte", - 
+"Minoru Asada", + 
+"Lars Asker", + 
+"Javed Aslam", + 
+"Haralabos Athanassiou", + 
+"Jose L. Balcazar", + 
+"Timothy P. Barber", + 
+"Michael W. Barley", + 
+"Cristina Baroglio", - 
+"Peter Bartlett", + 
+"Eric Baum", - 
+"Welton Becket", + 
+"Shai Ben-David", - 
+"George Berg", + 
+"Neil Berkman", + 
+"Malini Bhandaru", + 
+"Bir Bhanu", + 
+"Reinhard Blasig", + 
+"Avrim Blum", - 
+"Anselm Blumer", - 
+"Justin Boyan", + 
+"Carla E. Brodley", + 
+"Nader Bshouty", + 
+"Wray Buntine", - 
+"Andrey Burago", - 
+"Tom Bylander", + 
+"Bill Byrne", + 
+"Claire Cardie", - 
+"Richard A. Caruana", + 
+"John Case", + 
+"Jason Catlett", + 
+"Nicolo Cesa-Bianchi", + 
+"Philip Chan", - 
+"Mark Changizi", + 
+"Pang-Chieh Chen", + 
+"Zhixiang Chen", - 
+"Wan P. Chiang", + 
+"Steve A. Chien", - 
+"Jeffery Clouse", + 
+"William Cohen", + 
+"David Cohn", + 
+"Clare Bates Congdon", - 
+"Antoine Cornuejols", - 
+"Mark W. Craven", + 
+"Robert P. Daley", + 
+"Lindley Darden", + 
+"Chris Darken", - 
+"Bhaskar Dasgupta", - 
+"Brian D. Davidson", - 
+"Michael de la Maza", + 
+"Olivier De Vel", - 
+"Scott E. Decatur", - 
+"Gerald F. DeJong", + 
+"Kan Deng", + 
+"Thomas G. Dietterich", - 
+"Michael J. Donahue", + 
+"George A. Drastal", + 
+"Harris Drucker", + 
+"Chris Drummond", - 
+"Hal Duncan", + 
+"Thomas Ellman", - 
+"Tapio Elomaa", + 
+"Susan L. Epstein", + 
+"Bob Evans", + 
+"Claudio Facchinetti", - 
+"Tom Fawcett", + 
+"Usama Fayyad", - 
+"Aaron Feigelson", + 
+"Nicolas Fiechter", + 
+"David Finton", + 
+"John Fischer", + 
+"Paul Fischer", + 
+"Seth Flanders", + 
+"Lance Fortnow", + 
+"Ameur Foued", - 
+"Judy A. Franklin", + 
+"Yoav Freund", + 
+"Johannes Furnkranz", + 
+"Merrick L. Furst", + 
+"Jean Gabriel Ganascia", + 
+"William Gasarch", + 
+"Ricard Gavalda", + 
+"Melinda T. Gervasio", + 
+"Yolanda Gil", + 
+"David Gillman", + 
+"Attilio Giordana", - 
+"Kate Goelz", + 
+"Paul W. Goldberg", + 
+"Sally Goldman", + 
+"Diana Gordon", + 
+"Geoffrey Gordon", + 
+"Jonathan Gratch", + 
+"Leslie Grate", + 
+"William A. Greene", + 
+"Russell Greiner", + 
+"Marko Grobelnik", + 
+"Tal Grossman", + 
+"Margo Guertin", + 
+"Tom Hancock", + 
+"Earl S. Harris Jr.", + 
+"David Haussler", + 
+"Matthias Heger", + 
+"Lisa Hellerstein", + 
+"David Helmbold", + 
+"Daniel Hennessy", + 
+"Haym Hirsh", + 
+"Jonathan Hodgson", + 
+"Robert C. Holte", + 
+"Jiarong Hong", + 
+"Chun-Nan Hsu", - 
+"Kazushi Ikeda", + 
+"Masayuki Inaba", + 
+"Drago Indjic", - 
+"Nitin Indurkhya", + 
+"Jeff Jackson", + 
+"Sanjay Jain", + 
+"Wolfgang Janko", + 
+"Klaus P. Jantke", - 
+"Nathalie Japkowicz", + 
+"George H. John", + 
+"Randolph Jones", + 
+"Michael I. Jordan", + 
+"Leslie Pack Kaelbling", + 
+"Bala Kalyanasundaram", + 
+"Thomas E. Kammeyer", - 
+"Grigoris Karakoulas", - 
+"Michael Kearns", + 
+"Neela Khan", + 
+"Roni Khardon", + 
+"Dennis F. Kibler", + 
+"Jorg-Uwe Kietz", + 
+"Efim Kinber", - 
+"Jyrki Kivinen", - 
+"Emanuel Knill", - 
+"Craig Knoblock", - 
+"Ron Kohavi", + 
+"Pascal Koiran", + 
+"Moshe Koppel", + 
+"Daniel Kortenkamp", + 
+"Matevz Kovacic", + 
+"Stefan Kramer", - 
+"Martinch Krikis", + 
+"Martin Kummer", + 
+"Eyal Kushilevitz", - 
+"Stephen Kwek", - 
+"Wai Lam", + 
+"Ken Lang", + 
+"Steffen Lange", - 
+"Pat Langley", + 
+"Mary Soon Lee", + 
+"Wee Sun Lee", + 
+"Moshe Leshno", + 
+"Long-Ji Lin", + 
+"Charles X. Ling", - 
+"Michael Littman", + 
+"David Loewenstern", + 
+"Phil Long", - 
+"Wolfgang Maass", + 
+"Bruce A. MacDonald", - 
+"Rich Maclin", + 
+"Sridhar Mahadevan", - 
+"J. Jeffrey Mahoney", - 
+"Yishay Mansour", + 
+"Mario Marchand", + 
+"Shaul Markovitch", - 
+"Oded Maron", - 
+"Maja Mataric", + 
+"David Mathias", + 
+"Toshiyasu Matsushima", + 
+"Stan Matwin", - 
+"Eddy Mayoraz", - 
+"R. Andrew McCallum", - 
+"L. Thorne McCarty", - 
+"Alexander M. Meystel", - 
+"Michael A. meystel", + 
+"Steven Minton", - 
+"Nina Mishra", + 
+"Tom M. Mitchell", + 
+"Dunja Mladenic", + 
+"David Montgomery", + 
+"Andrew W. Moore", - 
+"Johanne Morin", + 
+"Hiroshi Motoda", + 
+"Stephen Muggleton", - 
+"Patrick M. Murphy", + 
+"Sreerama K. Murthy", - 
+"Filippo Neri", + 
+"Craig Nevill-Manning", - 
+"Andrew Y. Ng", - 
+"Nikolay Nikolaev", + 
+"Steven W. Norton", - 
+"Joseph O'Sullivan", + 
+"Dan Oblinger", + 
+"Jong-Hoon Oh", + 
+"Arlindo Oliveira", - 
+"David W. Opitz", + 
+"Sandra Panizza", + 
+"Barak A. Pearlmutter", + 
+"Ed Pednault", - 
+"Jing Peng", + 
+"Fernando Pereira", + 
+"Aurora Perez", + 
+"Bernhard Pfahringer", + 
+"David Pierce", + 
+"Krishnan Pillaipakkamnatt", - 
+"Roberto Piola", + 
+"Leonard Pitt", + 
+"Lorien Y. Pratt", + 
+"Armand Prieditis", - 
+"Foster J. Provost", + 
+"J. R. Quinlan", - 
+"John Rachlin", + 
+"Vijay Raghavan", + 
+"R. Bharat Rao", - 
+"Priscilla Rasmussen", - 
+"Joel Ratsaby", + 
+"Michael Redmond", + 
+"Patricia J. Riddle", + 
+"Lance Riley", + 
+"Ronald L. Rivest", + 
+"Huw Roberts", + 
+"Dana Ron", + 
+"Robert S. Roos", + 
+"Justinian Rosca", + 
+"John R. Rose", + 
+"Dan Roth", + 
+"James S. Royer", + 
+"Ronitt Rubinfeld", + 
+"Stuart Russell", - 
+"Lorenza Saitta", + 
+"Yoshifumi Sakai", + 
+"William Sakas", + 
+"Marcos Salganicoff", + 
+"Steven Salzberg", - 
+"Claude Sammut", - 
+"Cullen Schaffer", + 
+"Robert Schapire", + 
+"Mark Schwabacher", + 
+"Michele Sebag", + 
+"Gary M. Selzer", + 
+"Sebastian Seung", + 
+"Arun Sharma", - 
+"Jude Shavlik", + 
+"Daniel L. Silver", + 
+"Glenn Silverstein", - 
+"Yoram Singer", + 
+"Mona Singh", + 
+"Satinder Pal Singh", + 
+"Kimmen Sjolander", + 
+"David B. Skalak", + 
+"Sean Slattery", + 
+"Robert Sloan", + 
+"Donna Slonim", + 
+"Carl H. Smith", + 
+"Sonya Snedecor", + 
+"Von-Wun Soo", + 
+"Thomas G. Spalthoff", - 
+"Mark Staley", + 
+"Frank Stephan", - 
+"Mandayam T. Suraj", + 
+"Richard S. Sutton", + 
+"Joe Suzuki", + 
+"Prasad Tadepalli", - 
+"Hiroshi Tanaka", + 
+"Irina Tchoumatchenko", - 
+"Brian Tester", - 
+"Chen K. Tham", - 
+"Tatsuo Unemi", + 
+"Lyle H. Ungar", - 
+"Paul Utgoff", + 
+"Karsten Verbeurgt", + 
+"Paul Vitanyi", + 
+"Xuemei Wang", + 
+"Manfred Warmuth", + 
+"Gary Weiss", + 
+"Sholom Weiss", - 
+"Thomas Wengerek", - 
+"Bradley L. Whitehall", - 
+"Alma Whitten", - 
+"Robert Williamson", + 
+"Janusz Wnek", + 
+"Kenji Yamanishi", + 
+"Takefumi Yamazaki", + 
+"Holly Yanco", + 
+"John M. Zelle", + 
+"Thomas Zeugmann", - 
+"Jean-Daniel Zucker", + 
+"Darko Zupanic", + 

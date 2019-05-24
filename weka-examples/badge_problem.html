@@ -1,0 +1,370 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>The badge problem</title>
+<meta http-equiv="pragma" content="no-cache"></head><body bgcolor="#ffffff">
+<h1>Badge problem</h1>
+<i>Author: Hakan Kjellerstrand, 
+<a href="mailto:hakank@bonetmail.com">hakank@bonetmail.com</a>)
+</i>
+<br><br>
+One of the best collections of machine learning data sets 
+(<a href="ftp://ftp.ics.uci.edu/pub/machine-learning-databases/">ftp://ftp.ics.uci.edu/pub/machine-learning-databases/</a>) 
+includes this "recreational" data set called "Badge Problem". I havn't seen 
+any solutions to the problem anywhere, so here is my take. 
+<br>
+(The full URL to the badge files is 
+<a href="ftp://ftp.ics.uci.edu/pub/machine-learning-databases/badges">ftp://ftp.ics.uci.edu/pub/machine-learning-databases/badges</a>.)
+
+<br><br>
+In this problem I used the open source machine learning/data mining tool Weka,
+(written in Java). Go to 
+<a href="http://www.cs.waikato.ac.nz/%7Eml/weka/">http://www.cs.waikato.ac.nz/~ml/weka/</a> 
+to read more. Also read about the very inspiring book "Data Mining: Practical 
+Machine Learning Tools and Techniques with Java Implementations" (written by
+Ian H. Witten and Eibe Frank) which describes machine learning and the Weka 
+tool: <a href="http://www.cs.waikato.ac.nz/%7Eml/weka/book.html">http://www.cs.waikato.ac.nz/~ml/weka/book.html</a>.
+
+
+<h2>Presentation of the problem</h2>
+There was not much information about the problem (which makes it fun!). 
+From the informations file <a href="http://www.hakank.org/data_mining/badges.info">badges.info</a>:
+<pre>1. Title: ML94/COLT94 Badge Problem
+
+2. Source Information
+   -- Creator: Haym Hirsh, after an idea by Rob Schapire
+   -- Donor: Haym Hirsh (hirsh@cs.rutgers.edu)
+   -- Date: September, 1994
+ 
+3. Past Usage:
+    Every pre-registered attendee at the 1994 Machine Learning
+    Conference and 1994 Computational Learning Theory Conference received
+    a badge labeled with a "+" or "-".  The labeling was due to some
+    function known only to the badge generator (Haym Hirsh), and it
+    depended only on the attendee's name.  The goal for conference
+    attendees was to identify the unknown function used to generate the
+    +/- labeling.
+
+4. Relevant Information:
+    Part of the problem in using an automated program to discover the
+    unknown target function is to decide how to encode names such that
+    the program can be used.  The data below are presented in the form
+    of a +/- label followed by the person's name.  It is up to the
+    learning-system user to decide how to convert this data into something
+    usable by the system (e.g., what attributes to use if your favorite
+    learner requires feature-vector data).
+</pre>
+
+The problem data:
+<ul>
+ <li>as plain text: <a href="http://www.hakank.org/data_mining/badges.data">badges.data</a>
+ </li><li>as ARFF file <a href="http://www.hakank.org/data_mining/badges_plain.arff">badges_plain.arff</a> (the
+file format often used in Weka)
+</li></ul>
+
+<br><br>
+<font color="green" size="+1">
+<b>Now, please take some minutes and try it yourself!</b>
+</font>
+<br><br>
+
+<h2>My solution</h2>
+The first thing to realize is that just the data in the original file 
+will not get us any long way in our <b>machine learning</b> project. 
+It must be completed with other attributes such as different lengths, counts 
+etc. But what lengths or counts? Of course, we could sit down for a time and 
+try to solve it in our head (it is very well possible), but my personal object
+was to use machine learning tools. 
+<br><br>
+Note: I assumed that the solution was to be found by treating the names as 
+string, i.e. it could not be a very far fetched solution such as information 
+not given in the data set, such as the person's length, age or time they 
+talked at the conference.
+<br><br>
+
+It took some minutes to think of and generates a couple of possible solutions.
+As you may notice by the number of attributes I tried, I didn't get the
+solution directly.
+<br><br>
+
+The attributes I tried was:
+<br><br>
+<table>
+<tbody><tr>
+<td><b>Attribute name, and type</b></td>
+<td><b>Explanation</b></td>
+</tr>
+
+<tr>
+<td>
+name {...}
+</td>
+<td>
+all the names (given in the original)
+</td>
+</tr>
+
+<tr>
+<td>
+length numeric
+</td>
+<td>
+length of name
+</td>
+</tr>
+
+
+<tr>
+<td>
+even_odd {0,1}
+</td>
+<td>
+length of name even or odd?
+</td>
+</tr>
+
+<tr>
+<td>
+first_char_vowel {0,1} 
+</td>
+<td>
+is first character a vowel?
+</td>
+</tr>
+
+<tr>
+<td>
+second_char_vowel {0,1}  
+</td>
+<td>
+is second character a vowel?
+</td>
+</tr>
+
+<tr>
+<td>
+vowels numeric 
+</td>
+<td>
+number of vowels in the name
+</td>
+</tr>
+
+<tr>
+<td>
+consonants numeric
+</td>
+<td>
+number of consonants
+</td>
+</tr>
+
+<tr>
+<td>
+vowel_consonant_ratio numeric
+</td>
+<td>
+the ratio of vowels / consonant (this is not farfetched???)
+</td>
+</tr>
+
+<tr>
+<td>
+spaces numeric
+</td>
+<td>
+number of spaces
+</td>
+</tr>
+
+<tr>
+<td>
+dots numeric 
+</td>
+<td>
+number of "." in the name, i.e. name initials
+</td>
+</tr>
+
+<tr>
+<td>
+words numeric
+</td>
+<td>
+number of words, i.e number of names, including name initials..
+</td>
+</tr>
+
+<tr>
+<td>
+class {+,-}
+</td>
+<td>
+the badge labels (given in the original)
+</td>
+</tr>
+
+
+</tbody></table>
+
+<br><br>
+I used this Perl program to generate the ARFF data file. Perl is <b>very</b>
+handy for this kind of stuff!
+
+<pre>
+#!/usr/bin/perl -w
+# 
+# Sun Oct 14 08:55:57 2001/hakank@bonetmail.com
+# 
+# Generate attributes for the badges problem
+# 
+$|=1;
+use strict;
+
+my $file = "badges.data";
+
+open FILE, $file or die "Cannot open $file: $!";
+
+my %data = ();
+while (&lt;FILE&gt;) {
+  next if /^\s*$/;
+  chomp;
+  $data{$2} = $1 if m/([+-])\s+(.+)$/;
+}
+
+my @names = join ",", map {"\"$_\""} sort keys %data;
+
+print&lt;&lt;EOF;
+\@relation badges
+\@attribute name {@names}
+\@attribute length numeric
+\@attribute even_odd {0,1}
+\@attribute first_char_vowel {0,1}
+\@attribute second_char_vowel {0,1}
+\@attribute vowels numeric
+\@attribute consonants numeric
+\@attribute vowel_consonant_ratio numeric
+\@attribute spaces numeric
+\@attribute dots numeric
+\@attribute words numeric
+\@attribute class {-,+}
+\@data
+EOF
+
+foreach my $name (sort keys %data) {
+  my @name              = split //, $name;
+
+  my $length            = length $name;
+  my $even_odd_len      = ($length % 2 == 0) ? 1 : 0;
+  my ($vowels, $consonants, $spaces, $ratio, $dots)
+                        = vowels_consonants_spaces($name);
+  my $first_char_vowel  = (is_vowel($name[0]) == 1) ? 1 : 0;
+  my $second_char_vowel = (is_vowel($name[1]) == 1) ? 1 : 0;
+  my @words             = split /\s+/, $name;
+  my $words             = scalar @words;
+
+  print "\"$name\", $length, $even_odd_len, $first_char_vowel, $second_char_vowel, $vowels, $consonants, $ratio, $spaces, $dots, $words, $data{$name}\n";
+}
+
+
+sub is_vowel {
+  my ($char) = @_;
+
+  return 1 if lc $char =~ /^[aeiou]$/i;
+
+  return 0;
+}
+
+
+sub vowels_consonants_spaces {
+  my ($name)     = @_;
+
+  my $vowels     = 0;
+  my $consonants = 0;
+  my $spaces     = 0;
+  my $dots       = 0;
+
+  for (split //, $name) {
+    $_ = lc $_;
+    if (/[aeiou]/i)     {
+      $vowels++;
+    } elsif ($_ eq " ") {
+      $spaces++;
+    } elsif ($_ eq ".") {
+      $dots++;
+    } else              {
+      $consonants++
+    }
+
+  }
+
+  my $ratio = sprintf "%0.2f", $vowels/$consonants;
+  return ($vowels, $consonants, $spaces, $ratio, $dots);
+
+}
+</pre>
+
+<br><br>
+For all the different trials I made (i.e. versions of the Perl program), I 
+then tested the generated ARFF file (mainly) with Weka's J48 decision tree 
+algorithm, to see if there was some sort of indication of patterns or
+regularities. 
+<br>
+(The reason I used J48 was that it's one of my favorite in Weka since it's 
+very fast and it give a good overview of the solution, as a decision tree. 
+Luckily the "badge function" was of the right kind.)
+<br><br>
+
+And then the following Weka command [I used the command line commands of Weka;
+there is also a very nice GUI]:
+<br><br>
+<pre>java weka.classifiers.trees.j48.J48 -t badges2.arff
+</pre>
+<br>
+produced the this (somewhat stripped) result:
+<br>
+<pre>J48 pruned tree
+---------------
+
+second_char_vowel = 0: - (84.0)
+second_char_vowel = 1: + (210.0)
+
+....
+=== Error on training data ===
+
+Correctly Classified Instances         294              100      %
+.....
+
+=== Confusion Matrix ===
+
+   a   b   &lt;-- classified as
+  84   0 |   a = -
+   0 210 |   b = +
+....
+</pre>
+
+Ah, so the labels "+" and "-" corresponds exactly with the occurence of a 
+vowel in the second position in the name! 
+
+<br><br>
+Here is the final generated ARFF file <a href="http://www.hakank.org/data_mining/badges2.arff">badges2.arff</a>.
+
+
+<h3>Final note</h3>
+This was a fun little problem! And I actually learn a thing or two by
+twiddling with it.
+<br><br>
+How long did the complete task took? I didn't clock the time exactly, but it
+probably took about the same time as it did for me to write (and re-edit) this HTML report, somewhere between 30-45 minutes.
+<br><br>
+I did get astray in my pursuit for a while since I temporarily forgot that in 
+english the letter "Y" is not a vowel (which it is in swedish, my native 
+language). And once I remember that, it was then an easy way forward.
+<br>
+<hr noshade="noshade">
+<address>
+Back to <a href="http://www.hakank.org/data_mining/">Data Mining, Machine Learning etc</a><br>
+Back to the <a href="http://www.hakank.org/weka/">Weka</a> page<br>
+Back to my <a href="http://www.hakank.org/">homepage</a><br>
+Created by Hakan Kjellerstrand <a href="mailto:hakank@bonetmail.com">hakank@bonetmail.com</a>
+</address>
+
+</body></html>
