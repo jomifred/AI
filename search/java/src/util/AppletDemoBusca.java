@@ -37,6 +37,8 @@ import busca.MostraStatusConsole;
 import busca.Nodo;
 import busca.SubidaMontanha;
 import exemplos.Estado8Puzzle;
+import exemplos.EstadoElevador;
+import exemplos.EstadoElevadorDificil;
 import exemplos.EstadoJarros;
 import exemplos.EstadoMapa;
 import exemplos.EstadoRainhas;
@@ -96,8 +98,11 @@ public class AppletDemoBusca extends JApplet {
             cProblema.addItem("<sem selecao>");
             cProblema.addItem(new Jarros());
             cProblema.addItem(new P_HLAC()); 
+            cProblema.addItem(new P_HLAC()); 
             cProblema.addItem(new P_MisCa()); 
             cProblema.addItem(new P_Mapa()); 
+            cProblema.addItem(new P_Elevador()); 
+            cProblema.addItem(new P_ElevadorDif()); 
             cProblema.addItem(new P_Puzzle1()); 
             cProblema.addItem(new P_Puzzle2()); 
             cProblema.addItem(new P_Puzzle3()); 
@@ -301,6 +306,15 @@ public class AppletDemoBusca extends JApplet {
     	Jarros() { super("Jarros"); }
     	Estado getInicial() { return new EstadoJarros(0,0,"inicial"); }
     	Estado getMeta() { return new EstadoJarros(2,2,"meta"); }    	
+    }
+
+    class P_Elevador extends Problema {
+    	P_Elevador() { super("Elevador"); }
+    	Estado getInicial() { return new EstadoElevador(new int[] {17,26,20,19,31},"inicial"); }
+    }
+    class P_ElevadorDif extends Problema {
+    	P_ElevadorDif() { super("Elevador (dificil)"); }
+    	Estado getInicial() { return new EstadoElevadorDificil(new int[] {17,26,20,19,31},"inicial"); }
     }
 
     class P_HLAC extends Problema {

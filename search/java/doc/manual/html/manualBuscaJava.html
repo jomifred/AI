@@ -1,6 +1,10 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 
-<!--Converted with LaTeX2HTML 2018 (Released Feb 1, 2018) -->
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
 <TITLE>manualBuscaJava</TITLE>
@@ -10,7 +14,7 @@
 <META NAME="distribution" CONTENT="global">
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2018">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
 
 <LINK REL="STYLESHEET" HREF="http://www.inf.furb.br/%7Ejomi/labs.css">
@@ -31,15 +35,23 @@
   HREF="http://www.ufsc.br">Universidade Federal de Santa Catarina</A>
 
 <BR> <A NAME="tex2html2"
-  HREF="http://www.das.ufsc.br"><SPAN  CLASS="textbf">Departamento de Automa&#231;&#227;o e Sistemas</SPAN></A>
-<BR>
-<A NAME="tex2html3"
-  HREF="http://jomi.das.ufsc.br//ia"><SPAN  CLASS="textbf">Intelig&#234;ncia Artificial</SPAN></A>
-<BR><A NAME="tex2html4"
-  HREF="http://jomi.das.ufsc.br/">Professores: Jomi F. H&#252;bner</A>
+  HREF="http://www.das.ufsc.br"><B>Departamento de Automa&#231;&#227;o e Sistemas</B></A>
+<BR> <A NAME="tex2html3"
+  HREF="http://www.pgeas.ufsc.br"><B>Programa de P&#243;s-Gradua&#231;&#227;o em Engenharia de Automa&#231;&#227;o e Sistemas</B></A>
+<BR> <A NAME="tex2html4"
+  HREF="http://www.das.ufsc.br/~jomi/ia"><B>Intelig&#234;ncia Artificial</B></A>
+<BR><A NAME="tex2html5"
+  HREF="http://www.das.ufsc.br/~jomi">Professor: Jomi F. H&#252;bner</A>
 <BR>
 <P>
 
+</td>
+<td style="text-align: right;">
+<a href="http://www.furb.br">
+<img
+style="border: 0px solid ; width: 123px; height: 76px;" alt="logo"
+src="http://www.ufsc.br/paginas/imgs/transparente.gif">
+</a>
 </td>
 </table>
 
@@ -47,12 +59,12 @@
 
 <P>
 
-<h1 class=title>
-        <SPAN  CLASS="textbf">Manual de utiliza&#231;&#227;o dos algoritmos de
+<h0>
+        <B>Manual de utiliza&#231;&#227;o dos algoritmos de
 <BR>
-Busca em Java</SPAN>
+Busca em Java</B>
         
-        </h1>
+        </h0>
 
 <P>
 
@@ -104,7 +116,7 @@ m&#233;todos:
 
 <P>
 </LI>
-<LI>O m&#233;todo <TT>ehMeta()</TT> deve retornar <SPAN  CLASS="textit">true</SPAN> se o estado for o
+<LI>O m&#233;todo <TT>ehMeta()</TT> deve retornar <I>true</I> se o estado for o
   estado meta.
 
 <P>
@@ -129,7 +141,7 @@ Exemplo</A>
 
 <P>
 Para demonstrar a utiliza&#231;&#227;o do pacote, ser&#225; resolvido o
-problema do <SPAN  CLASS="textit">O homem, o lobo, o carneiro e o cesto de alface</SPAN>,
+problema do <I>O homem, o lobo, o carneiro e o cesto de alface</I>,
 que tem o seguinte enunciado:
 
 <P>
@@ -180,25 +192,25 @@ homem='d', lobo='d', carneiro='d', alface='d';
 A gera&#231;&#227;o de sucessores pode ser resumida como
 
 <UL>
-<LI>"levar <SPAN  CLASS="textit">x</SPAN> da margem <SPAN  CLASS="textit">w</SPAN> para a margem <SPAN  CLASS="textit">z</SPAN>beginitemize
+<LI>"levar <I>x</I> da margem <I>w</I> para a margem <I>z</I>beginitemize
 </LI>
-<LI><SPAN  CLASS="textit">x</SPAN> &#233; uma das vari&#225;veis { carneiro, alface, lobo } ou
+<LI><I>x</I> &#233; uma das vari&#225;veis { carneiro, alface, lobo } ou
     n&#227;o levar nada,
 </LI>
-<LI><SPAN  CLASS="textit">w</SPAN> &#233; 'd' ou 'e',
+<LI><I>w</I> &#233; 'd' ou 'e',
 </LI>
-<LI><SPAN  CLASS="textit">z</SPAN> &#233; 'd' ou 'e'.
+<LI><I>z</I> &#233; 'd' ou 'e'.
   
 </LI>
 </UL>
 Pr&#233;-condi&#231;&#245;es
   
 <UL>
-<LI><SPAN  CLASS="textit">w</SPAN> &#233; diferente de <SPAN  CLASS="textit">z</SPAN>,
+<LI><I>w</I> &#233; diferente de <I>z</I>,
 </LI>
-<LI>o homem estar na margem <SPAN  CLASS="textit">w</SPAN>,
+<LI>o homem estar na margem <I>w</I>,
 </LI>
-<LI>o homem estar na mesma margem de <SPAN  CLASS="textit">x</SPAN>,
+<LI>o homem estar na mesma margem de <I>x</I>,
 </LI>
 <LI>n&#227;o ficar na mesma margem ((o lobo e o carneiro) ou (o carneiro
     e o alface)) sem o homem.
@@ -210,9 +222,9 @@ Pr&#233;-condi&#231;&#245;es
 Efeitos
   
 <UL>
-<LI>Se <SPAN  CLASS="textit">x</SPAN> &#233; 'd', vira 'e'.
+<LI>Se <I>x</I> &#233; 'd', vira 'e'.
 </LI>
-<LI>Se <SPAN  CLASS="textit">x</SPAN> &#233; 'e', vira 'd'.
+<LI>Se <I>x</I> &#233; 'e', vira 'd'.
 </LI>
 <LI>Se homem &#233; 'd', vira 'e'.
 </LI>
@@ -222,7 +234,7 @@ Efeitos
 </UL>
 
 <P>
-Segue a implementa&#231;&#227;o desta classe (<A NAME="tex2html5"
+Segue a implementa&#231;&#227;o desta classe (<A NAME="tex2html6"
   HREF="../HLAC.java">clique para
   obter o fonte .java</A>):
 
@@ -457,18 +469,16 @@ este arquivo deve estar no classpath.
 Para windows:
 <PRE>
   set CLASSPATH=C:\xxx\buscaJava.jar;.
-  cd src
-  javac exemplos/HLAC.java
-  java exemplos.HLAC
+  javac HLAC.java
+  java HLAC
 </PRE>
 
 <P>
 Para unix:
 <PRE>
   export CLASSPATH=/xxx/buscaJava.jar:.
-  cd src
-  javac exemplos/HLAC.java
-  java exemplos.HLAC
+  javac HLAC.java
+  java HLAC
 </PRE>
 
 <P>
@@ -521,12 +531,12 @@ No m&#233;todo <TT>main</TT> est&#225; exemplificada a utiliza&#231;&#227;o dest
 
 <P>
 Mais informa&#231;&#245;es sobre a classe Nodo e como ela pode ser utilizada
-podem ser obtidas na <A NAME="tex2html6"
+podem ser obtidas na <A NAME="tex2html7"
   HREF="../../apidoc/index.html">API do
   pacote</A>
 e/ou nos programas exemplo
 (diret&#243;rio
-<A NAME="tex2html7"
+<A NAME="tex2html8"
   HREF="../../../src/exemplos"><TT>src/exemplos</TT></A>).
 
 <P>
@@ -549,7 +559,7 @@ classe que representa o estado tamb&#233;m deve implementar a interface
 
 <P>
 No exemplo
-<A NAME="tex2html8"
+<A NAME="tex2html9"
   HREF="../../../src/exemplos/Estado8Puzzle.java">8-Puzzle</A>
 esta interface &#233; implementada.
 
@@ -573,16 +583,15 @@ classe que representa o estado tamb&#233;m deve implementar a interface
 Nos seguintes exemplos essa interface &#233; implementada
 
 <UL>
-<LI><A NAME="tex2html9"
+<LI><A NAME="tex2html10"
   HREF="../../../src/exemplos/Estado8Puzzle.java">8-Puzzle</A>.
 </LI>
-<LI><A NAME="tex2html10"
+<LI><A NAME="tex2html11"
   HREF="../../../src/exemplos/EstadoRainhas.java">N-Rainhas</A>.
 </LI>
-<LI><A NAME="tex2html11"
+<LI><A NAME="tex2html12"
   HREF="../../../src/exemplos/QuadradoMagico.java">Quadrado
-
-m&#225;gico</A>.
+    m&#225;gico</A>.
 </LI>
 </UL>
 
@@ -605,18 +614,20 @@ classe que representa o estado tamb&#233;m deve implementar a interface
 Nos seguintes exemplos essa interface &#233; implementada
 
 <UL>
-<LI><A NAME="tex2html12"
+<LI><A NAME="tex2html13"
   HREF="../../../src/exemplos/EstadoRainhas.java">N-Rainhas</A>.
 </LI>
-<LI><A NAME="tex2html13"
+<LI><A NAME="tex2html14"
   HREF="../../../src/exemplos/QuadradoMagico.java">Quadrado
-
-m&#225;gico</A>.
+    m&#225;gico</A>.
 </LI>
 </UL>
 
 <P>
 <BR><HR>
-
+<ADDRESS>
+Jomi Hubner
+2014-05-21
+</ADDRESS>
 </BODY>
 </HTML>

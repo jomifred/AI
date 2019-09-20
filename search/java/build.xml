@@ -7,7 +7,7 @@
     </target>
 
     <target name="compile" depends="init" >
-        <javac debug="true" destdir="${basedir}/classes" deprecation="true" srcdir="src" source="1.5" target="1.5" encoding="Latin1"/>
+        <javac debug="true" destdir="${basedir}/classes" deprecation="true" srcdir="src" source="1.7" target="1.7" encoding="Latin1"/>
     </target>
 
     <target name="jar" depends="init,compile" >
@@ -34,7 +34,7 @@
             <classpath>
                 <pathelement location="buscaJava.jar"/>
             </classpath>
-        </nbprofiledirect>        
+        </nbprofiledirect>
         <java classname="exemplos.Estado8Puzzle" failonerror="true" fork="yes" >
             <classpath>
                 <pathelement location="buscaJava.jar"/>
