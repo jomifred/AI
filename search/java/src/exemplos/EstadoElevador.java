@@ -44,9 +44,11 @@ public class EstadoElevador implements Estado, Heuristica {
     		// conta elevadores fora do lugar
     		//if (e > getObjetivoMax() || e < 21)
     		//	h++;
-    		if (e > getObjetivoMax())
+    		
+    		// conta distancia até lugar
+    		if (e > getObjetivoMax()) // está acima
     			h += 1+((e-getObjetivoMax())/13);
-    		if (e < 21)
+    		else if (e < 21) // está abaixo
     			h += 1+((21-e)/8);    		
     	}
     	return h;
