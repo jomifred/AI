@@ -21,7 +21,7 @@ import busca.Nodo;
  * @version (02/04/2004)
  */
 public class MissionarioCanibal implements Estado, Antecessor{
-    
+
     public String getDescricao() {
         return
         "Tres misssionarios e tres canibais estao a beira de um rio e dispoem de\n"+
@@ -31,16 +31,16 @@ public class MissionarioCanibal implements Estado, Antecessor{
         "canibais sejam mais numerosos do que os missionarios em uma das margens do rio.\n\n"+
         "Implementacao de Malcus Otavio Quinoto Imhof & Daniel Dalcastagne - 5. Semestre Matutino - BCC\n\n";
     }
-    
+
     /** atributos do estado */
     final int missionario, canibal;
-    
+
     /** lado do barco */
     final char barco;
-    
+
     /** operacao que gerou o estado */
     final String op;
-    
+
     /** Recebe a quantidade de canibais na margem esquerda*/
     public MissionarioCanibal(int m, int c,char b, String o) {
         missionario = m;
@@ -48,15 +48,15 @@ public class MissionarioCanibal implements Estado, Antecessor{
         barco = b;
         op = o;
     }
-    
+
     public boolean ehMeta(){
     	return missionario == 0 && canibal == 0;
     }
-    
+
     public int custo() {
         return 1;
     }
-    
+
     /** Lista de sucessores */
     public List<Estado> sucessores(){
         List<Estado> suc = new LinkedList<Estado>(); //Lista de sucessores
@@ -70,16 +70,16 @@ public class MissionarioCanibal implements Estado, Antecessor{
         levar1c(suc);
         //levar 2 canibais
         levar2c(suc);
-        
+
         //Retornar a lista de Sucessores
         return suc;
     }
-    
+
     /** Lista de antecessores, para busca bidirecional */
     public List<Estado> antecessores(){
         return sucessores();
     }
-    
+
     /** Verifica se o sucessor gerado e valido */
     public boolean ehValido(){
         if (missionario < canibal && missionario != 0)
@@ -88,13 +88,13 @@ public class MissionarioCanibal implements Estado, Antecessor{
             return false;
         return true;
     }
-    
+
     /** Movimenta um missionario de uma margem a outra */
     public void levar1m(List<Estado> suc){
         //Se o barco estiver do lado esquerdo e houver pelo menos 1 mission�rio nesse lado
         if (barco == 'e' && missionario > 0){
             //Gera um sucessor
-            MissionarioCanibal novo = new MissionarioCanibal(missionario-1,canibal,'d',"Levar 1 mission�rio para margem direita");
+            MissionarioCanibal novo = new MissionarioCanibal(missionario-1,canibal,'d',"Levar 1 missioario para margem direita");
             //Verifica se o sucessor gerado � valido
             if (novo.ehValido())
                 //Se for v�lido, adiciona na lista de sicessores
@@ -103,7 +103,7 @@ public class MissionarioCanibal implements Estado, Antecessor{
             //Se o barco estiver do lado direto e Houver pelo menos 1 mission�rio neste lado
             if (barco == 'd' && missionario < 3) {
                 //Gerar o sucessor
-                MissionarioCanibal novo = new MissionarioCanibal(missionario+1,canibal,'e',"Levar 1 mission�rio para margem esquerda");
+                MissionarioCanibal novo = new MissionarioCanibal(missionario+1,canibal,'e',"Levar 1 missionario para margem esquerda");
                 //Verificar se ele � valido
                 if (novo.ehValido())
                     //Adicionar na lista de sucessores
@@ -111,13 +111,13 @@ public class MissionarioCanibal implements Estado, Antecessor{
             }
         }
     }
-    
+
     /** Movimenta 2 missionarios de uma margem a outra */
     public void levar2m(List<Estado> suc){
         //Se o barco estiver do lado esquerdo e houver pelo menos 2 mission�rios deste lado
         if (barco == 'e' && missionario > 1){
             //Gerar o sucessor
-            MissionarioCanibal novo = new MissionarioCanibal(missionario-2,canibal,'d',"Levar 2 mission�rios para margem direita");
+            MissionarioCanibal novo = new MissionarioCanibal(missionario-2,canibal,'d',"Levar 2 missionarios para margem direita");
             //Verificar se ele � valido
             if (novo.ehValido())
                 //Adicionar na lista de sucessores
@@ -126,7 +126,7 @@ public class MissionarioCanibal implements Estado, Antecessor{
             //Se o barco estiver do lado direito e houver dois mission�rios deste lado
             if (barco == 'd' && missionario < 2){
                 //Gerar sucessor
-                MissionarioCanibal novo = new MissionarioCanibal(missionario+2,canibal,'e',"Levar 2 mission�rios para margem esquerda");
+                MissionarioCanibal novo = new MissionarioCanibal(missionario+2,canibal,'e',"Levar 2 missionarios para margem esquerda");
                 //Verificar se ele � valido
                 if (novo.ehValido())
                     //Adicionar na lista de sucessores
@@ -134,13 +134,13 @@ public class MissionarioCanibal implements Estado, Antecessor{
             }
         }
     }
-    
-    /** Movimentar 1 mission�rio e 1 canibal */
+
+    /** Movimentar 1 missionario e 1 canibal */
     public void levar1m1c(List<Estado> suc){
         //Se o barco estiver do lado esquerdo e houver pelo menos um mission�rio e um canibal deste lado
         if (barco == 'e' && missionario > 0 && canibal > 0){
             //Gerar sucessor
-            MissionarioCanibal novo = new MissionarioCanibal(missionario-1,canibal-1,'d',"Levar 1 mission�rio e 1 canibal para margem direita");
+            MissionarioCanibal novo = new MissionarioCanibal(missionario-1,canibal-1,'d',"Levar 1 missionario e 1 canibal para margem direita");
             //Verificar se ele � valido
             if (novo.ehValido())
                 //Adicionar na lista de sucessores
@@ -149,7 +149,7 @@ public class MissionarioCanibal implements Estado, Antecessor{
             //Se o barco estiver do lado direito e houver pelo menos um mission�rio e um canibal deste lado
             if (barco == 'd' && missionario < 3 && canibal <3){
                 //Gerar Sucessor
-                MissionarioCanibal novo = new MissionarioCanibal(missionario+1,canibal+1,'e',"Levar 1 mission�rio e 1 canibal para margem esquerda");
+                MissionarioCanibal novo = new MissionarioCanibal(missionario+1,canibal+1,'e',"Levar 1 missionario e 1 canibal para margem esquerda");
                 //Verificar se ele � v�lido
                 if (novo.ehValido())
                     //Adicionar na lista de sucessores
@@ -157,7 +157,7 @@ public class MissionarioCanibal implements Estado, Antecessor{
             }
         }
     }
-    
+
     /** Movimentar um canibal de uma margem a outra */
     public void levar1c(List<Estado> suc){
         //Se o barco estiver do lado esquero e houver pelo menos um canibal deste lado
@@ -180,7 +180,7 @@ public class MissionarioCanibal implements Estado, Antecessor{
             }
         }
     }
-    
+
     /** Levar 2 canibais de uma margem a outra */
     public void levar2c(List<Estado> suc){
         //Se o barco estiver do lado esquerdo e houver pelo menos dois canibais deste lado
@@ -203,7 +203,7 @@ public class MissionarioCanibal implements Estado, Antecessor{
             }
         }
     }
-    
+
     public String toString() {
         String dir = "", esq = "";
         if (missionario == 3)
@@ -218,7 +218,7 @@ public class MissionarioCanibal implements Estado, Antecessor{
         }
         if (missionario == 0)
             dir += "MMM";
-        
+
         if (canibal == 3)
             esq += "CCC";
         if (canibal == 2){
@@ -235,20 +235,20 @@ public class MissionarioCanibal implements Estado, Antecessor{
             esq += 'B';
         else
             dir += 'B';
-        
+
         return esq+"|"+dir+"( "+op+" )"+"\n";
     }
 
     public static void main(String[] a) throws IOException {
         MissionarioCanibal inicial = new MissionarioCanibal(3,3,'e',"");
         MissionarioCanibal finau = new MissionarioCanibal(0,0,'d',"");
-        
+
         String str;
         BufferedReader teclado;
         teclado = new BufferedReader(new InputStreamReader(System.in));
-        
+
         Nodo n = null;
-        
+
         System.out.print("Digite sua opcao de busca { Digite S para finalizar }\n");
         System.out.print("\t1  -  Largura\n");
         System.out.print("\t2  -  Profundidade\n");
@@ -290,8 +290,8 @@ public class MissionarioCanibal implements Estado, Antecessor{
             str = teclado.readLine().toUpperCase();
         }
     }
-    
-    
+
+
     /** Verifica se um estado � igual a outro j� inserido na lista de sucessores (usado para poda) */
     public boolean equals(Object o) {
     	try {
@@ -304,13 +304,13 @@ public class MissionarioCanibal implements Estado, Antecessor{
         }
         return false;
     }
-    
-    /** 
+
+    /**
      * retorna o hashCode desse estado
      * (usado para poda, conjunto de fechados)
      */
     public int hashCode() {
         return (missionario + "," + canibal + barco).hashCode();
     }
-    
+
 }
