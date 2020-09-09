@@ -1,0 +1,98 @@
+busca/AEstrela.java
+ busca.AEstrela
+exemplos/EstadoJarros.java
+ exemplos.EstadoJarros
+busca/BuscaLargura.java
+ busca.BuscaLargura
+grafo/Main.java
+ grafo.Main
+exemplos/HLAC.java
+ exemplos.HLAC
+busca/BuscaBidirecional.java
+ busca.BuscaBidirecional
+grafo/ArestaDirigidaValorada.java
+ grafo.ArestaDirigidaValorada
+busca/Estado.java
+ busca.Estado
+exemplos/MissionarioCanibal.java
+ exemplos.MissionarioCanibal
+grafo/Aresta.java
+ grafo.Aresta
+busca/Status.java
+ busca.Status
+grafo/Grafo.java
+ grafo.Grafo
+busca/Aleatorio.java
+ busca.Aleatorio
+busca/Busca.java
+ busca.Busca
+busca/BuscaRecursiva.java
+ busca.BuscaRecursiva
+busca/BuscaIterativo.java
+ busca.BuscaIterativo
+grafo/ArestaValorada.java
+ grafo.ArestaValorada
+grafo/ArestaNaoDirigida.java
+ grafo.ArestaNaoDirigida
+busca/MostraStatusConsole.java
+ busca.MostraStatusConsole
+busca/Antecessor.java
+ busca.Antecessor
+exemplos/EstadoMapa.java
+ exemplos.EstadoMapa
+grafo/ArestaNaoDirigidaValorada.java
+ grafo.ArestaNaoDirigidaValorada
+busca/BuscaProfundidade.java
+ busca.BuscaProfundidade
+grafo/GrafoDirigido.java
+ grafo.GrafoDirigido
+busca/BuscaHeuristica.java
+ busca.BuscaHeuristica
+ busca.BuscaHeuristica$1
+grafo/Vertice.java
+ grafo.Vertice
+grafo/GrafoNaoDirigido.java
+ grafo.GrafoNaoDirigido
+grafo/ArestaDirigida.java
+ grafo.ArestaDirigida
+exemplos/QuadradoMagico.java
+ exemplos.QuadradoMagico
+exemplos/EstadoRainhas.java
+ exemplos.EstadoRainhas
+exemplos/EstadoElevador.java
+ exemplos.EstadoElevador
+exemplos/Estado8Puzzle.java
+ exemplos.Estado8Puzzle
+exemplos/QuadradoMagicoB.java
+ exemplos.QuadradoMagicoB
+util/AppletDemoBusca.java
+ util.AppletDemoBusca
+ util.AppletDemoBusca$1
+ util.AppletDemoBusca$2
+ util.AppletDemoBusca$3
+ util.AppletDemoBusca$4
+ util.AppletDemoBusca$5
+ util.AppletDemoBusca$6
+ util.AppletDemoBusca$7
+ util.AppletDemoBusca$8
+ util.AppletDemoBusca$Jarros
+ util.AppletDemoBusca$P_Elevador
+ util.AppletDemoBusca$P_ElevadorDif
+ util.AppletDemoBusca$P_HLAC
+ util.AppletDemoBusca$P_Mapa
+ util.AppletDemoBusca$P_MisCa
+ util.AppletDemoBusca$P_Puzzle1
+ util.AppletDemoBusca$P_Puzzle2
+ util.AppletDemoBusca$P_Puzzle3
+ util.AppletDemoBusca$P_Quadrado1
+ util.AppletDemoBusca$P_Quadrado2
+ util.AppletDemoBusca$P_Rainhas
+ util.AppletDemoBusca$Problema
+exemplos/EstadoElevadorDificil.java
+ exemplos.EstadoElevadorDificil
+busca/Heuristica.java
+ busca.Heuristica
+busca/Nodo.java
+ busca.Nodo
+busca/SubidaMontanha.java
+ busca.SubidaMontanha
