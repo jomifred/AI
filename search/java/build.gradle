@@ -23,6 +23,10 @@ task run (type: JavaExec, dependsOn: 'classes') {
     classpath sourceSets.main.runtimeClasspath
 }
 
+jar  {
+    baseName 'search'
+}
+
 clean {
     delete 'bin'
     delete 'build'
