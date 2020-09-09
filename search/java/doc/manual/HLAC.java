@@ -1,5 +1,3 @@
-package exemplos;
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,7 +10,7 @@ import busca.Nodo;
  * o homem, o lobo, o alface e o carneiro
  */
 public class HLAC implements Estado {
-    
+
     public String getDescricao() {
         return
         "Uma pessoa, um lobo, um carneiro e um cesto de alface estao a beira \n"+
@@ -22,10 +20,10 @@ public class HLAC implements Estado {
         "em nenhum momento devem ser deixados juntos e sozinhos o lobo e o \n"+
         "carneiro ou o carneiro e o cesto de alface. \n\n";
     }
-    
+
     final char homem, lobo, carneiro, alface; // preferir "immutable objects"
     final String op; // operacao que gerou o estado
-    
+
     /** construtor para o estado, recebe cada valor de atributo */
     public HLAC(char h, char l, char c, char a, String o) {
         homem = h;
@@ -34,35 +32,35 @@ public class HLAC implements Estado {
         alface = a;
         op = o;
     }
-    
+
     /**
      * verifica se o estado e meta
      */
     public boolean ehMeta() {
         return homem=='d' && lobo=='d' && carneiro=='d' && alface=='d';
     }
-    
+
     /**
      * Custo para geracao do estado
      */
     public int custo() {
         return 1;
     }
-    
+
     /**
      * gera uma lista de sucessores do nodo.
      */
     public List<Estado> sucessores() {
         List<Estado> suc = new LinkedList<Estado>(); // a lista de sucessores
-        
+
         levarCarneiro(suc); // tenta levar o carneiro
         levarLobo(suc);
         levarAlface(suc);
         levarNada(suc);
-        
+
         return suc;
     }
-    
+
     private void levarCarneiro(List<Estado> suc) {
         if (carneiro == homem) { // homem e carneiro na mesma margem
         	char novaMargem = ladoOposto(homem);
@@ -72,7 +70,7 @@ public class HLAC implements Estado {
             }
         }
     }
-    
+
     private void levarLobo(List<Estado> suc) {
         if (lobo == homem) {
         	char novaMargem = ladoOposto(homem);
@@ -82,7 +80,7 @@ public class HLAC implements Estado {
             }
         }
     }
-    
+
     private void levarAlface(List<Estado> suc) {
         if (alface == homem) {
         	char novaMargem = ladoOposto(homem);
@@ -92,7 +90,7 @@ public class HLAC implements Estado {
             }
         }
     }
-    
+
     private void levarNada(List<Estado> suc) {
     	char novaMargem = ladoOposto(homem);
         HLAC novo = new HLAC(novaMargem, lobo, carneiro, alface, "levarN-"+homem+novaMargem);
@@ -108,8 +106,8 @@ public class HLAC implements Estado {
     		return 'e';
     	}
     }
-    
-    
+
+
     /** returna true se o estado e valido */
     private boolean ehValido() {
         if (lobo == carneiro && lobo != homem) {
@@ -122,7 +120,7 @@ public class HLAC implements Estado {
         }
         return true;
     }
-    
+
     /**
      * verifica se um estado e igual a outro
      * (usado para poda)
@@ -134,15 +132,15 @@ public class HLAC implements Estado {
         }
         return false;
     }
-    
-    /** 
+
+    /**
      * retorna o hashCode desse estado
      * (usado para poda, conjunto de fechados)
      */
     public int hashCode() {
         return (""+homem + lobo + carneiro + alface).hashCode();
     }
-    
+
     public String toString() {
         String dir = ""; // quem esta na dir
         String esq = ""; // quem esta na esq
@@ -168,11 +166,11 @@ public class HLAC implements Estado {
         }
         return esq +"|" + dir + " (" + op + ")\n";
     }
-    
-    
+
+
     public static void main(String[] a) {
         HLAC inicial = new HLAC('e', 'e', 'e', 'e', "inicial");
-        
+
         // chama busca em largura
         System.out.println("busca em largura");
         Nodo n = new BuscaLargura().busca(inicial);
@@ -183,4 +181,3 @@ public class HLAC implements Estado {
         }
     }
 }
-
