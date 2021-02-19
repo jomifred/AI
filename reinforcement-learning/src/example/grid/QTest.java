@@ -29,14 +29,14 @@ public class QTest {
         GridState j = null; // next state
         String    a = null; // action
         double    r;        // reward on last state x action
-        
+        printGrid(); 
         int epoch = 0;
         while (epoch < 50) {
             
             a = ql.getExplorationActionByGreedy(i);
             j = i.simulateAction(a);
             r = j.getReward();
-
+            
             ql.updateQ(i, a, j, r);
 
             //System.out.println(": from "+i+" to "+j+" by "+a+" with reward = "+r+" new q="+nq);

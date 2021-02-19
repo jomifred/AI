@@ -1,0 +1,25 @@
+#+TITLE:    Código pra disciplina de Inteligência Artificial
+#+AUTHOR:   Jomi F. Hübner
+#+EMAIL:    jomi.hubner@ufsc.br
+#+DATE:     2021
+
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LANGUAGE:  pt
+#+OPTIONS: email:t H:2 toc:nil num:nil author:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS: TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://jomi.das.ufsc.br/ia/ia.css" />
+
+* Apresentação
+
+Esse repositório tem os fontes para 
+- Constraint Solving Problems (com gprolog)
+- Aprendizado por reforço
+- Busca em espaço de estados
+  - busca em largura
+  - profundidade
+  - profundidade iterativo
+  - bi-direcional
+  - subida da montanha
+  - A*
+
