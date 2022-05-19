@@ -54,7 +54,7 @@ resolution :-
 	V5 #= V49,
 	V9 #= V36,
 	V22 #= V48,
-	
+
 	% cada linha tem que ter cada letra
 	fd_all_different(L1),
 	fd_all_different(L2),
@@ -113,7 +113,7 @@ constraintCol(L1, L2, L3, L4, L5, L6, L7, NrCol) :-
 converteListaParaLetra([],[]).
 converteListaParaLetra([C|R],[L|RL]) :-
 	converteParaLetra(C,L),
-	converteListaParaLetra(R,RL).	
+	converteListaParaLetra(R,RL).
 converteParaLetra(1,d).
 converteParaLetra(2,i).
 converteParaLetra(3,c).
