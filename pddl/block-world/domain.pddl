@@ -1,5 +1,5 @@
 (define (domain blocksworld)
-(:requirements :strips :equality)
+(:requirements :strips)
 (:predicates (clear ?x)
              (on-table ?x)
              (arm-empty)
@@ -9,13 +9,13 @@
 (:action pickup
   :parameters (?ob)
   :precondition (and (clear ?ob) (on-table ?ob) (arm-empty))
-  :effect (and (holding ?ob) (not (clear ?ob)) (not (on-table ?ob)) 
+  :effect (and (holding ?ob) (not (clear ?ob)) (not (on-table ?ob))
                (not (arm-empty))))
 
 (:action putdown
   :parameters  (?ob)
   :precondition (and (holding ?ob))
-  :effect (and (clear ?ob) (arm-empty) (on-table ?ob) 
+  :effect (and (clear ?ob) (arm-empty) (on-table ?ob)
                (not (holding ?ob))))
 
 (:action unstack
@@ -31,4 +31,3 @@
                (not (clear ?underob)) (not (holding ?ob))))
 
 )
-
