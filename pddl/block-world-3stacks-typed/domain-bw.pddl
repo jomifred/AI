@@ -6,7 +6,7 @@
              (arm-empty)
              (holding ?x - block)
              (clear ?x - block)
-             (on ?x -block ?y - block)
+             (on ?x - block ?y - block)
              (block-at ?x - block ?p - stack))
 
 (:action pickup
@@ -22,14 +22,14 @@
                (not (holding ?ob)) (not (clear-table ?p)) ))
 
 (:action unstack
-  :parameters  (?ob - block ?underob -block ?p - stack)
+  :parameters  (?ob - block ?underob - block ?p - stack)
   :precondition (and (on ?ob ?underob) (clear ?ob) (arm-empty) (block-at ?ob ?p))
   :effect (and (holding ?ob) (clear ?underob)
                (not (block-at ?ob ?p)) (not (on ?ob ?underob)) (not (clear ?ob)) (not (arm-empty))))
 
 (:action stack
   :parameters  (?ob - block ?underob - block ?p - stack)
-  :precondition (and (clear ?underob) (holding ?ob))
+  :precondition (and (clear ?underob) (holding ?ob) (block-at ?underob ?p))
   :effect (and (arm-empty) (clear ?ob) (on ?ob ?underob) (block-at ?ob ?p)
                (not (clear ?underob)) (not (holding ?ob))))
 
