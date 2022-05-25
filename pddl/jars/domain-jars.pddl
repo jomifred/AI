@@ -1,11 +1,13 @@
 (define (domain jugs)
-(:requirements :strips :typing :fluents :equality)
+(:requirements :strips :typing :fluents :equality :action-costs)
 
 (:types jug)
 
 (:functions
        (capacity ?j - jug)   ; capacity of a jug
        (amount   ?j - jug)   ; litres of water in the jug
+       (total-cost)
+       - number
 )
 
 (:action fill
@@ -13,6 +15,7 @@
   :precondition (< (amount ?j) (capacity ?j))
   :effect       (and
                      (assign (amount ?j) (capacity ?j))
+                     (increase (total-cost) 1)
                 )
 )
 
@@ -21,6 +24,7 @@
   :precondition (> (amount ?j) 0)
   :effect       (and
                      (assign (amount ?j) 0)
+                     (increase (total-cost) (capacity ?j)) ; to avoid wasting water
                 )
 )
 
@@ -34,6 +38,7 @@
   :effect       (and
                      (decrease (amount ?jf) (- (capacity ?jt) (amount ?jt) ))
                      (increase (amount ?jt) (- (capacity ?jt) (amount ?jt) ))
+                     (increase (total-cost) 1)
                 )
 )
 
@@ -48,6 +53,7 @@
   :effect       (and
                      (assign   (amount ?jf) 0)
                      (increase (amount ?jt) (amount ?jf) )
+                     (increase (total-cost) 1)
                 )
 )
 

@@ -18,3 +18,26 @@ The implementations:
 * folder `block-world-3stacks`: in this version the table has only 3 stacks and the goal defines the stacks and their place.
 
 * folder `block-world-3stacks-typed`: types were added for the objects.
+
+## Jugs
+
+### Problem description
+
+You are given a 4 liter jug and a 3 liter jug. Both the jugs are initially empty. The jugs don’t have markings to allow measuring smaller quantities.
+
+Considering that (X, Y) corresponds to a state where X refers to the amount of water in Jug1 and Y refers to the amount of water in Jug2, determine the path from the initial state (0, 0) to the final state (2,0).
+
+The operations you can perform are:
+
+* Empty a Jug, (X, Y)->(0, Y) Empty Jug 1
+* Fill a Jug, (0, 0)->(4, 0) Fill Jug 1
+* Pour water from one jug to the other until one of the jugs is either empty or full, (X, Y) -> (X-d, Y+d)
+
+### Solution
+
+The PDDL specification for this problem is in folder `jars`. It considers
+
+* cost of actions
+* functions
+
+(the `solve.sh` script uses docker to run a solver)
