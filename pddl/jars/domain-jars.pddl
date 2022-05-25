@@ -1,5 +1,5 @@
 (define (domain jugs)
-(:requirements :strips :typing :fluents :equality :conditional-effects)
+(:requirements :strips :typing :fluents :equality)
 
 (:types jug)
 
@@ -24,7 +24,7 @@
                 )
 )
 
-(:action pour2
+(:action pour
   :parameters   (?jf ?jt - jug)
   :precondition (and (not (= ?jf ?jt))
                      (> (amount ?jf) 0)
@@ -38,7 +38,7 @@
 )
 
 
-(:action pour3
+(:action pour-all
   :parameters   (?jf ?jt - jug)
   :precondition (and (not (= ?jf ?jt))
                      (> (amount ?jf) 0)
