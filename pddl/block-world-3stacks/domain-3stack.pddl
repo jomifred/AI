@@ -28,7 +28,7 @@
 
 (:action stack
   :parameters  (?ob ?underob ?p)
-  :precondition (and (clear ?underob) (holding ?ob))
+  :precondition (and (clear ?underob) (holding ?ob) (block-at ?underob ?p))
   :effect (and (arm-empty) (clear ?ob) (on ?ob ?underob) (block-at ?ob ?p)
                (not (clear ?underob)) (not (holding ?ob))))
 
