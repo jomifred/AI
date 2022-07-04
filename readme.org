@@ -14,4 +14,8 @@ Esse repositório tem os fontes para
   - bi-direcional
   - subida da montanha
   - A*
+- Planejamento Automático, com fontes para os problemas
+  - Mundo dos Blocos (Block World)
+  - Jarros 
+  - Missionarios e Canibais
 
