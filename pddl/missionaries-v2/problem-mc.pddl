@@ -25,3 +25,17 @@
    )
    (:metric minimize (total-cost))
 )
+
+; ff: found legal plan as follows
+; step    0: MOVE_C TWO LEFT RIGHT
+;         1: MOVE_C ONE RIGHT LEFT
+;         2: MOVE_C TWO LEFT RIGHT
+;         3: MOVE_C ONE RIGHT LEFT
+;         4: MOVE_M TWO LEFT RIGHT
+;         5: MOVE_MC RIGHT LEFT
+;         6: MOVE_M TWO LEFT RIGHT
+;         7: MOVE_C ONE RIGHT LEFT
+;         8: MOVE_C TWO LEFT RIGHT
+;         9: MOVE_C ONE RIGHT LEFT
+;        10: MOVE_C TWO LEFT RIGHT
+; plan cost: 11.000000

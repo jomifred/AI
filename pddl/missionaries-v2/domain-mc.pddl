@@ -15,7 +15,7 @@
 )
 
 (:action move_m
-  :parameters   (?f ?t - side ?c - crew)
+  :parameters   (?c - crew ?f ?t - side )
   :precondition (and (boat_at ?f)
                      (>= (pop_at mis ?f) (crew_vl ?c))
                      (or (=  (pop_at mis ?f) (crew_vl ?c))
@@ -30,7 +30,7 @@
 )
 
 (:action move_c
-  :parameters   (?f ?t - side ?c - crew)
+  :parameters   (?c - crew ?f ?t - side)
   :precondition (and (boat_at ?f)
                      (>= (pop_at can ?f) (crew_vl ?c))
                      (or (=  (pop_at mis ?t) 0)
