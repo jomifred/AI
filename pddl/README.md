@@ -44,4 +44,4 @@ The PDDL specification for this problem is in folder `jars`. It considers
 
 ## Missionaries and Canibals
 
-We start from a very simple solution (`v0` -- that does not consider constraints) and improve it on better (shorter) versions.
+We start from a very simple solution (`v0` -- that does not consider constraints) and improve it on better (shorter) versions. `v3` is the best I could write, with only one action.
