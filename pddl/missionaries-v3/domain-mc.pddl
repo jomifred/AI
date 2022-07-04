@@ -21,6 +21,8 @@
                 ; cm and cc are symbols (none, one, two) and function crew_vl translates them to a number
 
   :precondition (and (boat_at ?f)
+                     (not (= ?f ?t))
+                     
                      (>= (pop_at mis ?f) (crew_vl ?cm))
                      (>= (pop_at can ?f) (crew_vl ?cc))
                      (>= (+ (crew_vl ?cm) (crew_vl ?cc)) 1)

@@ -26,3 +26,18 @@
    )
    (:metric minimize (total-cost))
 )
+
+; output
+; ff: found legal plan as follows
+; step   0: MOVE NONE TWO LEFT RIGHT ==> move 0 mis, 2 can from left margin to right
+;        1: MOVE NONE ONE RIGHT LEFT
+;        2: MOVE NONE TWO LEFT RIGHT
+;        3: MOVE NONE ONE RIGHT LEFT
+;        4: MOVE TWO NONE LEFT RIGHT
+;        5: MOVE ONE ONE RIGHT LEFT
+;        6: MOVE TWO NONE LEFT RIGHT
+;        7: MOVE NONE ONE RIGHT LEFT
+;        8: MOVE NONE TWO LEFT RIGHT
+;        9: MOVE ONE NONE RIGHT LEFT
+;       10: MOVE ONE ONE LEFT RIGHT
+;;plan cost: 11.000000
