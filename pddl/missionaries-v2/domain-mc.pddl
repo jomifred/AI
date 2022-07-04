@@ -14,12 +14,14 @@
        - number
 )
 
+; move missionaries (crew of one or two) from one side to another
+;
 (:action move_m
   :parameters   (?c - crew ?f ?t - side)
   :precondition (and (boat_at ?f)
                      (>= (pop_at mis ?f) (crew_vl ?c))
-                     (or (=  (pop_at mis ?f) (crew_vl ?c))
-                         (>= (- (pop_at mis ?f) (crew_vl ?c)) (pop_at can ?f)))
+                     (or (=  (pop_at mis ?f) (crew_vl ?c))                      ; all mis will move OR
+                         (>= (- (pop_at mis ?f) (crew_vl ?c)) (pop_at can ?f))) ; the remaining mis should be majority
                 )
   :effect       (and
                      (not (boat_at ?f)) (boat_at ?t)
@@ -33,8 +35,8 @@
   :parameters   (?c - crew ?f ?t - side)
   :precondition (and (boat_at ?f)
                      (>= (pop_at can ?f) (crew_vl ?c))
-                     (or (=  (pop_at mis ?t) 0)
-                         (>= (pop_at mis ?t) (+ (crew_vl ?c) (pop_at can ?t))))
+                     (or (=  (pop_at mis ?t) 0)                                 ; no mis on destination OR
+                         (>= (pop_at mis ?t) (+ (crew_vl ?c) (pop_at can ?t)))) ; they will be majority there with the extra can
                 )
   :effect       (and
                      (not (boat_at ?f)) (boat_at ?t)
