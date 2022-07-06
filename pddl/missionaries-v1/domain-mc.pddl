@@ -19,6 +19,7 @@
                      (>= (pop_at mis ?f) 1)
                      (or (> (pop_at mis ?f) (pop_at can ?f))
                          (= (pop_at mis ?f) 1))
+                     ; bug: should consider the ?t side
                 )
   :effect       (and
                      (not (boat_at ?f)) (boat_at ?t)
@@ -34,6 +35,7 @@
                      (>= (pop_at mis ?f) 2)
                      (or (>= (- (pop_at mis ?f) 2) (pop_at can ?f))
                          (=  (pop_at mis ?f) 2))
+                     ; bug: should consider the ?t side
                 )
   :effect       (and
                      (not (boat_at ?f)) (boat_at ?t)
@@ -47,7 +49,8 @@
   :parameters   (?f ?t - side)
   :precondition (and (boat_at ?f)
                      (>= (pop_at can ?f) 1)
-                     (or (= (pop_at mis ?t) 0) (>= (pop_at mis ?t) (+ 1 (pop_at can ?t))))
+                     (or (= (pop_at mis ?t) 0)
+                         (>= (pop_at mis ?t) (+ 1 (pop_at can ?t))))
                 )
   :effect       (and
                      (not (boat_at ?f)) (boat_at ?t)
@@ -61,7 +64,8 @@
   :parameters   (?f ?t - side)
   :precondition (and (boat_at ?f)
                      (>= (pop_at can ?f) 2)
-                     (or (= (pop_at mis ?t) 0) (>= (pop_at mis ?t) (+ 2 (pop_at can ?t))))
+                     (or (= (pop_at mis ?t) 0)
+                         (>= (pop_at mis ?t) (+ 2 (pop_at can ?t))))
                 )
   :effect       (and
                      (not (boat_at ?f)) (boat_at ?t)

@@ -22,6 +22,7 @@
                      (>= (pop_at mis ?f) (crew_vl ?c))
                      (or (=  (pop_at mis ?f) (crew_vl ?c))                      ; all mis will move OR
                          (>= (- (pop_at mis ?f) (crew_vl ?c)) (pop_at can ?f))) ; the remaining mis should be majority
+                     ; bug: should consider the ?t side
                 )
   :effect       (and
                      (not (boat_at ?f)) (boat_at ?t)

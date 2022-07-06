@@ -3,10 +3,8 @@
    (:objects
         left right - side
         mis can - kind
-
    )
    (:init (boat_at left)
-
           (= (pop_at mis left)  3)
           (= (pop_at can left)  3)
           (= (pop_at mis right) 0)
