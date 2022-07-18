@@ -10,4 +10,4 @@ while [ ! `docker ps -qf "ancestor=azathoth/pddl"` ]; do
 done
 
 docker exec -it $(docker ps -qf "ancestor=azathoth/pddl" ) \
-   /root/planners/Metric-FF/ff -o /x/domain-jars.pddl -f /x/problem-jars.pddl
+   /root/planners/Metric-FF/ff -o /x/domain-jars.pddl -f /x/problem-jars.pddl -s 5
