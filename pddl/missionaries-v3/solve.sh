@@ -11,3 +11,7 @@ done
 
 docker exec -it $(docker ps -qf "ancestor=azathoth/pddl" ) \
    /root/planners/Metric-FF/ff -o /x/domain-mc.pddl -f /x/problem-mc.pddl -s 5
+
+# doesn't work (no support for OR -- I guess)
+#docker exec -it $(docker ps -qf "ancestor=azathoth/pddl" ) \
+#   /root/planners/optic-clp /x/domain-mc.pddl /x/problem-mc.pddl

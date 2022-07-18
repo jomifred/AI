@@ -11,3 +11,12 @@ done
 
 docker exec -it $(docker ps -qf "ancestor=azathoth/pddl" ) \
    /root/planners/Metric-FF/ff -o /x/domain-jars.pddl -f /x/problem-jars.pddl -s 5
+
+# the following does not solve the problem
+#
+#docker exec -it $(docker ps -qf "ancestor=azathoth/pddl" ) \
+#   /root/planners/optic-clp /x/domain-jars.pddl /x/problem-jars.pddl
+
+# docker run --rm -v "$(pwd)":/x aibasel/downward \
+#   --alias lama-first \
+#   /x/domain-jars.pddl /x/problem-jars.pddl

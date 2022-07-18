@@ -1,5 +1,5 @@
 (define (domain mc)
-(:requirements :strips :typing :fluents :equality :action-costs)
+(:requirements :strips :typing :fluents :equality :action-costs :disjunctive-preconditions)
 
 (:types side kind crew)
 
@@ -8,7 +8,7 @@
 )
 
 (:functions
-       (crew_vl ?c) ; maps one -> 1; two -> 2; none -> 0
+       (crew_vl ?c - crew) ; maps one -> 1; two -> 2; none -> 0
        (pop_at ?k - kind ?s - side)
        (total-cost)
        - number
@@ -22,7 +22,7 @@
 
   :precondition (and (boat_at ?f)
                      (not (= ?f ?t))
-                     
+
                      (>= (pop_at mis ?f) (crew_vl ?cm))
                      (>= (pop_at can ?f) (crew_vl ?cc))
                      (>= (+ (crew_vl ?cm) (crew_vl ?cc)) 1)
