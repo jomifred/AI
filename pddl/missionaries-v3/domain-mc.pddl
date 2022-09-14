@@ -3,6 +3,8 @@
 
 (:types side kind crew)
 
+(:constants mis can - kind)
+
 (:predicates
        (boat_at ?s - side)
 )

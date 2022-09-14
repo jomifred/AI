@@ -4,7 +4,6 @@
         left right - side
         mis can - kind
         none one two - crew
-
    )
    (:init (boat_at left)
           (= (crew_vl none) 0)
