@@ -1,6 +1,6 @@
 % Resolucao de CSP com GNU Prolog
 %
-% Exemplo Orimizacao na Compra de Adubo
+% Exemplo Otimizacao na Compra de Adubo
 %
 % Para executar, digite em uma shell de comandos:
 %   gprolog --query-goal "consult('adubo.pl'), resolve, halt"

@@ -1,3 +1,4 @@
+; solver http://editor.planning.domains
 (define (problem slide)
    (:domain blocksworld)
    (:objects a b c )

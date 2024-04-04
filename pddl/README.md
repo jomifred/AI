@@ -4,7 +4,7 @@ These examples are used in the [AI](https://jomifred.github.io/ia/) course of Pr
 
 ## Blocks World
 
-I have some solutions for the tradicional Block World example. In all of them, the main actions are:
+I have some solutions for the traditional Block World example. In all of them, the main actions are:
 
 * `pickup`: the robot removes a block from the table.
 * `putdown`: the robot puts the block it is holding on the table.
@@ -18,6 +18,8 @@ The implementations:
 * folder `block-world-3stacks`: in this version the table has only 3 stacks and the goal defines the stacks and their place.
 
 * folder `block-world-3stacks-typed`: types were added for the objects.
+
+You can use the [this web site](http://editor.planning.domains) to run the solver.
 
 ## Jugs
 
@@ -42,6 +44,6 @@ The PDDL specification for this problem is in folder `jars`. It considers
 
 (the `solve.sh` script uses docker to run a solver)
 
-## Missionaries and Canibals
+## Missionaries and Cannibals
 
 We start from a very simple solution (`v0` -- that does not consider constraints) and improve it on better (shorter) versions. `v3` is the best I could write, with only one action.
