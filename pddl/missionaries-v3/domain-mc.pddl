@@ -25,9 +25,9 @@
   :precondition (and (boat_at ?f)
                      (not (= ?f ?t))
 
-                     (>= (pop_at mis ?f) (crew_vl ?cm))
+                     (>= (pop_at mis ?f) (crew_vl ?cm)) ; there must be cm mis on boat side
                      (>= (pop_at can ?f) (crew_vl ?cc))
-                     (>= (+ (crew_vl ?cm) (crew_vl ?cc)) 1)
+                     (>= (+ (crew_vl ?cm) (crew_vl ?cc)) 1) ; there must be 1 or 2 in the boat (1<=cm+cc<=2)
                      (<= (+ (crew_vl ?cm) (crew_vl ?cc)) 2)
 
                      ; check the 'from' side
