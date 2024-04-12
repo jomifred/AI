@@ -10,7 +10,7 @@
 )
 
 (:functions
-       (crew_vl ?c - crew) ; maps one -> 1; two -> 2; none -> 0
+       (crew_vl ?c - crew)           ; maps one -> 1; two -> 2; none -> 0
        (pop_at ?k - kind ?s - side)
        (total-cost)
        - number
