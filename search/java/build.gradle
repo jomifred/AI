@@ -24,7 +24,7 @@ task run (type: JavaExec, dependsOn: 'classes') {
 }
 
 jar  {
-    baseName 'search'
+    archivesBaseName='search'
 }
 
 clean {
