@@ -30,9 +30,9 @@
  %\htmladdnormallink{\textbf{Programa de Pós-Graduação em Engenharia de Automação e Sistemas}}
   %  {http://www.pgeas.ufsc.br}\\
  \htmladdnormallink{\textbf{Inteligência Artificial}}
-    {http://jomi.das.ufsc.br//ia}\\
+    {https://jomifred.github.io/ia}\\
 \htmladdnormallink{Professores: Jomi F. Hübner} % \& Marcelo Stemmer}
-    {http://jomi.das.ufsc.br/}\\
+    {https://jomifred.github.io}\\
 
  \latex{
          \begin{center}
@@ -66,7 +66,7 @@ já estão implementados.
 
 \section{A interface Estado}
 
-A classe que representa o "estado" para cada problema específico
+A classe que representa o ``estado" para cada problema específico
 deve implementar a interface \texttt{Estado} que tem os seguintes
 métodos:
 
@@ -186,7 +186,7 @@ supondo que o seu programa esteja no arquivo \texttt{HLAC.java},
 
 em windows:
 \begin{verbatim}
-  set CLASSPATH=C:\xxx\search-1.0.jar;.
+  set CLASSPATH=C:\.....\build\libs\search-1.0.jar;.
   cd src
   javac HLAC.java
   java HLAC
@@ -194,7 +194,7 @@ em windows:
 
 Para unix:
 \begin{verbatim}
-  export CLASSPATH=/xxx/search-1.0.jar:.
+  export CLASSPATH=..../build/libs/search-1.0.jar:.
   cd src
   javac HLAC.java
   java HLAC
@@ -224,6 +224,10 @@ os seguintes algoritmos de busca
 
   No método \texttt{main} está exemplificada a utilização destes
   algoritmos.
+
+  No construtor pode-se informar uma classe para imprimir estatísticas de execução, por exemplo: 
+  \texttt{new BuscaLargura(new MostraStatusConsole())}. 
+  No exemplo, uma classe de estatísticas fornecida pelo pacote search é usada, mas outras podem ser implementadas.
 
 \item \texttt{new BuscaProfundidade(int max).busca( Estado inicial )}:
   recebe o estado inicial e a profundidade máxima e retorna o
