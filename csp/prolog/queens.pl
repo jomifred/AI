@@ -32,7 +32,7 @@ createQueens(N,[_|R]) :-
 
 % the "main"
 queensResolution(N) :-
-        createQueens(N, Queens),
+    createQueens(N, Queens),
 	queensDefinition(Queens),
 	fd_labeling(Queens, [variable_method(most_constrained)]),
 	write('queens='),write(Queens),nl.
