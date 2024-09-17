@@ -13,9 +13,9 @@ I have some solutions for the traditional Block World example. In all of them, t
 
 The implementations:
 
-* folder `block-world`: this is a very simple implementation that considers a table having infinite places (all blocs can be placed on top of the table). The goal is a set of stacks, their place in the table are ignored.
+* folder `block-world`: this is a very simple implementation that considers a table having infinite places (all blocks can be placed on top of the table). The goal is a set of stacks, their places in the table are ignored.
 
-* folder `block-world-3stacks`: in this version the table has only 3 stacks and the goal defines the stacks and their place.
+* folder `block-world-3stacks`: in this version the table has only 3 stacks and the goal defines the stacks and their places.
 
 * folder `block-world-3stacks-typed`: types were added for the objects.
 
