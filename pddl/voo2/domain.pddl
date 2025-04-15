@@ -12,7 +12,7 @@
   :duration (= ?duration 1)
   :condition (and 
     (at start (at ?c ?a))
-    (at start (at ?p ?a))
+    (over all (at ?p ?a))
   )
   :effect (and 
     (at end (in ?c ?p))
@@ -26,7 +26,7 @@
   :duration (= ?duration 1)
   :condition (and 
     (at start (in ?c ?p))
-    (at start (at ?p ?a))
+    (over all (at ?p ?a))
   )
   :effect (and 
     (at end (at ?c ?a))
@@ -43,8 +43,9 @@
     (over all (loaded ?p))
   )
   :effect (and 
+    (at end (not (at ?p ?f)))
     (at end (at ?p ?t))
-    (at end (not (at ?p ?f))))
+  )
 )
 
 )
