@@ -27,7 +27,7 @@
 )
 
 ; output
-; ff: found legal plan as follows
+; metric-ff: found legal plan as follows
 ; step   0: MOVE NONE TWO LEFT RIGHT ==> move 0 mis, 2 can from left margin to right
 ;        1: MOVE NONE ONE RIGHT LEFT
 ;        2: MOVE NONE TWO LEFT RIGHT

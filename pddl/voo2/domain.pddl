@@ -2,22 +2,21 @@
 (:requirements :strips :typing :durative-actions :fluents)
 (:types airplane airport cargo)
 
-(:predicates (at ?x - object ?a - airport)
-             (in ?c - cargo  ?p - airplane)
-             (loaded ?p - airplane)
+(:predicates (cargo-at ?x - cargo ?a    - airport) 
+             (cargo-in ?c - cargo  ?p - airplane)
+             (plane-at ?x - airplane ?a - airport)
 )
 
 (:durative-action load
   :parameters (?c - cargo ?p - airplane ?a - airport)
   :duration (= ?duration 1)
   :condition (and 
-    (at start (at ?c ?a))
-    (over all (at ?p ?a))
+    (at start (cargo-at ?c ?a))
+    (over all (plane-at ?p ?a))
   )
   :effect (and 
-    (at end (in ?c ?p))
-    (at end (loaded ?p))
-    (at start (not (at ?c ?a)))
+    (at start (not (cargo-at ?c ?a)))
+    (at end (cargo-in ?c ?p))
   )
 )
 
@@ -25,13 +24,12 @@
   :parameters (?c - cargo ?p - airplane ?a - airport)
   :duration (= ?duration 1)
   :condition (and 
-    (at start (in ?c ?p))
-    (over all (at ?p ?a))
+    (at start (cargo-in ?c ?p))
+    (over all (plane-at ?p ?a))
   )
   :effect (and 
-    (at end (at ?c ?a))
-    (at end (not (loaded ?p)))
-    (at start (not (in ?c ?p)))
+    (at start (not (cargo-in ?c ?p)))
+    (at end (cargo-at ?c ?a))
   )
 )
 
@@ -39,12 +37,11 @@
   :parameters (?p - airplane ?f ?t - airport) 
   :duration (= ?duration 5)
   :condition (and 
-    (at start (at ?p ?f))
-    (over all (loaded ?p))
+    (at start (plane-at ?p ?f))
   )
   :effect (and 
-    (at end (not (at ?p ?f))) ; why at start does not work?
-    (at end (at ?p ?t))
+    (at start (not (plane-at ?p ?f)))
+    (at end (plane-at ?p ?t))
   )
 )
 
