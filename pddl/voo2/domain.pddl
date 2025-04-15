@@ -43,7 +43,7 @@
     (over all (loaded ?p))
   )
   :effect (and 
-    (at end (not (at ?p ?f)))
+    (at end (not (at ?p ?f))) ; why at start does not work?
     (at end (at ?p ?t))
   )
 )
