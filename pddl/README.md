@@ -19,6 +19,8 @@ Implementations:
 
 * folder `block-world-3stacks-typed`: types were added for the objects.
 
+* folder `block-world-3stacks-existential`: uses *:existential-preconditions* to reduce the number of predicates and thus simplifies the effect part, initial and goal states.
+
 You can use the [this web site](http://editor.planning.domains) to run the solver.
 
 ## Jugs
