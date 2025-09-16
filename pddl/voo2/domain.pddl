@@ -5,6 +5,7 @@
 (:predicates (cargo-at ?x - cargo ?a    - airport) 
              (cargo-in ?c - cargo  ?p - airplane)
              (plane-at ?x - airplane ?a - airport)
+             (unloaded ?p - airplane)
 )
 
 (:durative-action load
@@ -12,11 +13,13 @@
   :duration (= ?duration 1)
   :condition (and 
     (at start (cargo-at ?c ?a))
+    (over all (unloaded ?p))
     (over all (plane-at ?p ?a))
   )
   :effect (and 
     (at start (not (cargo-at ?c ?a)))
     (at end (cargo-in ?c ?p))
+    (at end (not (unloaded ?p)))
   )
 )
 
@@ -30,6 +33,7 @@
   :effect (and 
     (at start (not (cargo-in ?c ?p)))
     (at end (cargo-at ?c ?a))
+    (at end (unloaded ?p))
   )
 )
 
