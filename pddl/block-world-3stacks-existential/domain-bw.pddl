@@ -24,6 +24,13 @@
           )
 )
 
+(:action putdown
+  :parameters  (?ob - block ?p - stack)
+  :precondition (and (holding ?ob) 
+                (not (exists (?b - block) (block-at ?b ?p))))
+  :effect (and  (block-at ?ob ?p)
+                (not (holding ?ob)) ))
+
 (:action unstack
   :parameters  (?ob - block ?underob - block ?p - stack)
   :precondition (and (on ?ob ?underob) 
@@ -34,17 +41,10 @@
                (not (block-at ?ob ?p)) (not (on ?ob ?underob)) ))
 
 
-(:action putdown
-  :parameters  (?ob - block ?p - stack)
-  :precondition (and (holding ?ob) 
-                (not (exists (?b - block) (block-at ?b ?p))))
-  :effect (and  (block-at ?ob ?p)
-                (not (holding ?ob)) ))
-
 (:action stack
   :parameters  (?ob - block ?underob - block ?p - stack)
   :precondition (and (holding ?ob)
-                (not (exists (?b - block) (on ?b ?ob))) 
+                (not (exists (?b - block) (on ?b ?underob))) 
                 (block-at ?underob ?p))
   :effect (and  (on ?ob ?underob) 
                 (block-at ?ob ?p)

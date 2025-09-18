@@ -21,6 +21,8 @@ Implementations:
 
 * folder `block-world-3stacks-existential`: uses *:existential-preconditions* to reduce the number of predicates and thus simplifies the effect part, initial and goal states.
 
+* folder `block-world-3stacks-derived`: uses *:derived-predicates* to improve the readability of pre-conditions.
+
 You can use the [this web site](http://editor.planning.domains) to run the solver.
 
 ## Jugs
