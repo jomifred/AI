@@ -13,3 +13,5 @@
                (block-at e p3) (on d e) 
           ))
 )
+
+; solve with LAMA
