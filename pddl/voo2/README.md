@@ -1,6 +1,14 @@
 
 ## to run
 
+run 
+
+    ./solve.sh
+
+it starts a docker and runs the solver.
+
+## using VS code plugin:
+
 start docker solver:
 
     docker run -p 5555:5555 --privileged jomifred/pddlplanutils
