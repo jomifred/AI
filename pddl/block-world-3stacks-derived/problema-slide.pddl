@@ -12,3 +12,5 @@
           (block-at c p3)(on a b) (on b c))
    )
 )
+
+; solves with LAMA
