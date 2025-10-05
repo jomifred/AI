@@ -11,7 +11,7 @@ it starts a docker and runs the solver.
 
 start docker solver:
 
-    docker run -p 5555:5555 --privileged jomifred/pddlplanutils
+    docker run -p 5555:5555 --privileged jomifred/pddlplanutils:v2
 
 configure the VS code PDDL plugin to use planutils with
 
