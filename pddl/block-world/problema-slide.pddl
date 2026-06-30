@@ -1,7 +1,7 @@
 ; solver http://editor.planning.domains
 (define (problem slide)
    (:domain blocksworld)
-   (:objects a b c )
+   (:objects a b c)
    (:init (on-table a) (on-table b)
           (clear b)  (clear c)
           (on c a)
@@ -9,3 +9,4 @@
    (:goal (and (on a b) (on b c) (clear a) (on-table c))
    )
 )
+
