@@ -1,4 +1,4 @@
-# docker build . -t jomifred/pddlplanutils:v2
+# docker build . -t jomifred/pddlplanutils:v3
 # docker run -p 5555:5555 --privileged jomifred/pddlplanutils:v2
 
 FROM aiplanning/planutils:latest
@@ -14,7 +14,7 @@ RUN planutils install -y smtplan
 RUN planutils install -y popf
 RUN planutils install -f -y tfd
 
-RUN planutils install -y optic
+RUN planutils install -f -y optic
 
 #RUN planutils install -f -y enhsp-2020
 RUN planutils install -f -y metric-ff
