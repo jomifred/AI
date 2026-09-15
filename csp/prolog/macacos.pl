@@ -10,7 +10,6 @@ resolve :-
   fd_all_different([Ga, Bn, Pl]),
   fd_all_different([Cg, Md, Sr]),
 
-  Ze #= 1,
   Ze #\= Ga,
   Ga #= Sr,
   Ze #\= Sr,
